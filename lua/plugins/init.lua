@@ -278,3 +278,17 @@ if #config.plugins > 0 then
 end
 
 require("lazy").setup(default_plugins, config.lazy_nvim)
+
+vim.filetype.add({
+  extension = {
+    log = 'log'
+  }
+})
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.log = {
+  install_info = {
+    url = "~/src/tree-sitter-log", -- local path or git repo
+    files = {"src/parser.c"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+  },
+  filetype = "log", -- if filetype does not match the parser name
+}
