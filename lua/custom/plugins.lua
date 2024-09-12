@@ -18,7 +18,11 @@ local plugins = {
     opts = {
       ensure_installed = {
         "clangd",
-        "rust-analyzer"
+        "rust-analyzer",
+        "pyright",
+        "shfmt",
+        "shellcheck",
+        "bash-language-server",
       }
     }
   },
